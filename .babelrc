@@ -1,0 +1,6 @@
+// 配置react-hot-loader
+{
+    "plugins": [
+        "react-hot-loader/babel"
+    ]
+}

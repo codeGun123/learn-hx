@@ -1,5 +1,5 @@
 import './style.css';
-// import printMe from './print.js';
+import printMe from './print.js';
 
 function component() {
     var element = document.createElement('div');
@@ -8,13 +8,24 @@ function component() {
     element.innerHTML = 'hello  测试 webpack 112';
     element.classList = 'box';
 
-    // var btn = document.createElement('button');
-    // btn.innerHTML = '打印一下'
-    // btn.onclick = printMe;
+    var btn = document.createElement('button');
+    btn.innerHTML = '打印一下'
+    btn.onclick = printMe;
 
-    // element.appendChild(btn);
+    element.appendChild(btn);
 
     return element;
 }
 
-document.body.appendChild(component());
+let element = component();
+
+document.body.appendChild(element);
+
+if (module.hot) {
+    module.hot.accept('./print.js', function () {
+        console.log('热替换');
+        document.body.removeChild(element);
+        element = component();
+        document.body.appendChild(element);
+    });
+}

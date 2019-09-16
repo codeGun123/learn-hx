@@ -1,12 +1,18 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
     entry: './src/index.js',
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist',
+        hot: true
+    },
     output: {
-        filename: '[name].[contenthash].bundle.js',
+        filename: '[name].[hash].bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
     module: {
@@ -23,6 +29,7 @@ module.exports = {
             title: 'HX-中台系统',
             template: 'src/index.ejs'
         }),
+        new webpack.HotModuleReplacementPlugin()
     ],
     optimization: {
         runtimeChunk: 'single',
