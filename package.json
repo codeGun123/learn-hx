@@ -1,0 +1,39 @@
+{
+  "name": "learn-hx",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack/webpack.dev.js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeGun123/learn-hx.git"
+  },
+  "keywords": [
+    "hx",
+    "react"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeGun123/learn-hx/issues"
+  },
+  "homepage": "https://github.com/codeGun123/learn-hx#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "css-loader": "^3.2.0",
+    "style-loader": "^1.0.0"
+  }
+}
